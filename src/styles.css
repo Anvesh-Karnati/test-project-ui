@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;font-size: 24px; }
+a{
+    cursor: pointer;
+}
+
+input,.mat-tab-label, .mat-tab-link,.mat-button,.mat-simple-snackbar{
+    font-size: 24px;
+  }
+
+.green-snackbar{
+    background-color: rgb(5, 201, 5);
+}
+.mat-simple-snackbar{
+    padding:30px 40px;
+    color:white
+   }

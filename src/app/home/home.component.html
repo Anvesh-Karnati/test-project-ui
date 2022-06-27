@@ -1,0 +1,57 @@
+<mat-toolbar color="primary">
+    <span>List of participants</span>
+</mat-toolbar>
+<div class="search">
+    <label for="search" class="label"><b>Search person using name:</b></label><br />
+    <input class="input-search" autocomplete="off" type="text" name="search" placeholder="Search..."
+        [(ngModel)]="filterTerm" />
+</div>
+
+<mat-tab-group>
+    <mat-tab label="Model-1:Using list">
+        <div class="align">
+            <ul class="person">
+                <li *ngFor="let detail of details| filter: filterTerm" (click)="onSelect(detail)"
+                    [class.selected]="detail.id === selectedId">
+                    <span class="badge">{{detail.id}}</span>
+                    <span>{{detail?.fname +' '+ detail?.lname}}</span>
+
+                </li>
+            </ul>
+        </div>
+    </mat-tab>
+    <mat-tab label="Model-2:Using table">
+        <div class="container text-center">
+            <div class="container">
+                <div class="row">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let detail of details| filter: filterTerm">
+                                <td >{{detail.id}}</td>
+                                <td (click)="onSelect(detail)">{{detail?.fname +' '+ detail?.lname}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </mat-tab>
+    <mat-tab label="Model-3:Using material list">
+        <mat-nav-list>
+            <mat-list-item *ngFor="let detail of details| filter: filterTerm">
+                <div>
+                    <a matLine (click)="openDialog(detail)">
+                        <p>{{detail.id +'.'+ detail?.fname +' '+ detail?.lname }}</p>
+                        <mat-divider></mat-divider>
+                    </a>
+                </div>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-tab>
+</mat-tab-group>

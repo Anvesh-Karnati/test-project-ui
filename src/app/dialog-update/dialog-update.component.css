@@ -1,0 +1,22 @@
+.marten {
+    margin-top: 1.5em !important;
+    margin: 0px 15px;
+}
+
+.xs-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .xs-full-width {
+    width: 100%;
+  }
+
+ .mat-input-element{
+font-size: 24px;
+ }
+ .mat-dialog-actions{
+  min-height: 65px;
+ }
+
